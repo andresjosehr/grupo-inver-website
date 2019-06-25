@@ -1,0 +1,97 @@
+.footer{
+	background-color: #d8d8d8;
+	color: #272d6b;
+	font-weight: 600;
+
+	&_menu{
+		font-size: 10px;
+    	line-height: 3;
+	}
+}
+
+.footer li{
+	list-style: none;
+}
+
+.postfooter{
+	background-color: #151b29;
+	padding: 0px 6.5rem;
+	color: white;
+	&_social{
+		text-align: right;
+		color: white;
+	}
+
+	&_insta{
+		    margin-right: 50px;
+	}
+}
+
+.postfooter{
+		height: 37px;
+		margin-top: -35px;
+	}
+
+	.postfooter .row{
+		display: flex !important;
+	}
+	.postfooter .copydiv, .postfooter .postfooter_social{
+		padding-top: 10px;
+	}
+
+	.postfooter .dere_rev{
+		font-size: 12px;
+	}
+	footer i{
+		color: #272d6b !important;
+	}
+	.data_fiscal .data_fiscal_link{
+		height: 85px;
+	    width: 49px;
+	    float: left;
+	    position: relative;
+	    background-image: url(https://www.grupoinver.com.ar/media/base/data.png);
+	    background-position: 0px;
+	}
+	footer li{
+		font-size: 16px;
+		color: #272d6b;
+		font-weight: 600;
+	}
+
+
+    @media only screen and (min-width: 769px) and (max-width: 1000px){
+    	.postfooter {
+    		padding: 0 4rem;
+		}
+		.postfooter_column2{
+			    margin-right: 14px;
+		}
+    }
+
+@media only screen and (max-width: 769px){
+	.footer_logo{
+		display: none;
+	}
+	.postfooter {
+    	padding: 0 2.1rem;
+	}
+}
+
+@media (max-width: 575.98px) { 
+  .postfooter{
+    height: 68px !important;
+  }
+  .footer_menu{
+    padding-left: 0px;
+  }
+  .footer .data_fiscal p.center-sm{
+        margin-left: 42%;
+  }
+}
+
+@media (max-width: 434.98px) { 
+  .postfooter{
+    height: 80px !important;
+  }
+}
