@@ -6,11 +6,12 @@
 			</div>
 			<div class="col-12 col-sm-4 center-sm">
 				<ul class="footer_menu">
-					<li>INICIO</li>
-					<li>DESARROLLISTA</li>
-					<li>INMOBILIARIA</li>
-					<li>CONSULTORA</li>
-					<li>CONTACTO</li>
+					<a href="../"><li>INICIO</li></a>
+					<a href="desarrollista"><li>DESARROLLISTA</li></a>
+					<a href="inmobiliaria"><li>INMOBILIARIA</li></a>
+					<a href="consultora"><li>CONSULTORA</li></a>
+					<a href="#"><li>ARQUITECTURA Y DISEÑO</li></a>
+					<a href="contacto"><li>CONTACTO</li></a>
 				</ul>
 			</div>
 			<div class="col-12 col-sm-4 center-sm data_fiscal">
@@ -19,7 +20,7 @@
 						<p class="center-sm" style="margin-top: -16px;"><a class="data_fiscal_link" href="http://qr.afip.gob.ar/?qr=Xx_Se24j7HgBlJ1r8ugDaA,," target="_blank"></a></p>	
 					</div>
 					<div class="col-md-9">
-						<p>Av. 24 de Setiembre 1616 - Barrio General Paz  X5004FTT Córdoba - Argentina</p>	
+						<p>Av. 24 de Setiembre 1616 <br> Barrio General Paz  X5004FTT <br> Córdoba - Argentina</p>	
 					</div>
 				</div>
 				<div class="div_social_footer" style="margin-top: 25px">
@@ -42,8 +43,8 @@
 <section class="postfooter">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 copydiv">
-				<h3 class="center-sm dere_rev" style='font-family: "Open Sans",sans-serif;'>© Copyright 2019 Grupo INVER • Desarrollado por <a href="https://www.btob.com.ar/" target="_blank" style="text-decoration: none;color: white;font-weight: 600;"> <span style="color: #fb1515;font-size: 13px;position: relative;margin-right: 5px;">BtoB</span>Soluciones </a> | Todos los derechos reservados</h3>
+			<div class="col-sm-12 copydiv" style="color: white; text-align: center;">
+				<h3 class="center-sm dere_rev" style='font-family: "Open Sans",sans-serif;color: white !important'>© Copyright 2019 Grupo INVER | Desarrollado por <a href="https://www.btob.com.ar/" target="_blank" style="text-decoration: none;color: white;font-weight: 600;"> <span style="color: #fb1515;font-size: 13px;position: relative;margin-right: 5px;bottom: -.5px;">BtoB</span>Soluciones </a> <!-- Todos los derechos reservados --></h3>
 			</div>
 		</div>
 	</div>
@@ -68,8 +69,17 @@
 		    margin-top: 15px;
 		}
 	}
+	input[type=number]::-webkit-inner-spin-button, 
+	input[type=number]::-webkit-outer-spin-button { 
+	    -webkit-appearance: none;
+	    -moz-appearance: none;
+	    appearance: none;
+	    margin: 0; 
+	}
 </style>
 
-<?php wp_footer(); ?>
+<?php // wp_footer(); ?>
 <script src='<?php echo get_site_url(); ?>/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>
+</body>
+</html>
 

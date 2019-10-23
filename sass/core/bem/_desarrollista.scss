@@ -15,7 +15,7 @@
 
 @media (max-width: 576px) { 
   .historia_section h1{
-    font-size: 55px;
+    font-size: 50px;
   }
   .historia_section h1:after{
         margin-left: -295px;
@@ -27,6 +27,10 @@
       width: 96% !important;
       max-width: 96% !important;
   }
+  .tab_con_des{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
 }
 
 
@@ -36,6 +40,10 @@
   }
   .img_cont{
     display: none;
+  }
+
+  .contenedor_pisos img{
+    width: 100%;
   }
 }
 

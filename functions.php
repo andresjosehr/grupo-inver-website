@@ -4,6 +4,9 @@
 /*** FUNCTIONS **********************************************************/
 /***********************************************************************/
 
+
+show_admin_bar(false); 
+
 /*
  * Clean a string from spaces and special characters, it will also lowercase the string.
  * http://stackoverflow.com/questions/14114411/remove-all-special-characters-from-a-string
@@ -348,5 +351,22 @@ function custom_upload_mimes( $existing_mimes = array() ) {
 	$existing_mimes['svg'] = 'image/svg+xml';
 	return $existing_mimes;
 }
+
+
+
+
+
+
+function template_chooser($template)   
+{    
+  global $wp_query;   
+  $post_type = get_query_var('post_type');   
+  if( $wp_query->is_search && $post_type == 'inmuebles' )   
+  {
+    return locate_template('inmuebles-search.php');  //  redirect to archive-search.php
+  }   
+  return $template;   
+}
+add_filter('template_include', 'template_chooser');    
 
 

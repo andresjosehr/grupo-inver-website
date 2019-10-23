@@ -8,7 +8,9 @@
 	get_header();
 
 
+  require_once("banner-search.php");
 
+     $Contacto=get_field('informacion_de_contacto');
 ?>
 
 
@@ -137,78 +139,6 @@
 </style>
 
 <!-- END The overlay -->
-<section class="banner_section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-            <div class="search-box" style="margin-top: 200px;">
-              <div class="box-descripcion">
-                <div class="box-descripcion-text">
-                  <h4><i class="fa fa-search"></i> ¡Encuentra la propedad que buscas!</h4>
-                </div>
-              </div>
-              <div class="card" style="margin: 0 auto;">
-                <div class="card-body">
-                  <form>
-                    <div class="row">
-                      <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1">Tipo de operacion</label>
-                        <select type="text" class="form-control" id="TipoOperacion" placeholder="Password">
-                          <option value="1">Alquiler</option>
-                          <option value="2">Venta</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Tipo de proriedad</label>
-                        <select type="text" class="form-control" id="TipoPropiedad" placeholder="Password">
-                          <option value="1">Casa</option>
-                                    <option value="2">Departamento</option>
-                                    <option value="3">Terreno</option>
-                                    <option value="4">Local</option>
-                                    <option value="5">Galpón</option>
-                                    <option value="6">Oficina</option>
-                                    <option value="7">Cochera</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-2">
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Dormitorios</label>
-                        <select type="text" class="form-control" id="Dormitorios" placeholder="Password">
-                          <option value="1">Uno</option>
-                          <option value="2">Dos</option>
-                          <option value="3">Mas de Dos</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-2">
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Cochera</label>
-                        <select type="text" class="form-control" id="Cochera" placeholder="Password">
-                          <option value="1">Si</option>
-                          <option value="2">No</option>
-                          <option value="3">Indistinto</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="col-md-2">
-                      <div class="form-group">
-                        <label for="exampleInputPassword1" style="color: white">_</label><br>
-                        <button type="submit" class="btn btn-primary btn-block">Buscar <i style="margin-left: 20px;" class="fa fa-search"></i></button>
-                      </div>
-                    </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-</section>
 
 
 <style>
@@ -281,10 +211,10 @@
 <section class="contact-section">
 <div class="container contact-form">
             <div class="contact-image">
-                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+                <img style="transform: rotate(0deg);" src="<?= get_template_directory_uri() ?>/images/casa.png" alt="rocket_contact"/>
             </div>
             <form method="post">
-                <h3>Contactanos y atenderemos tu solicitud inmediatamente</h3>
+                <h3>Contáctenos y atenderemos su solicitud inmediatamente</h3>
                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -294,7 +224,7 @@
                             <input type="text" name="txtEmail" class="form-control" placeholder="Apellido *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="txtPhone" class="form-control" placeholder="Direccion *" value="" />
+                            <input type="text" name="txtPhone" class="form-control" placeholder="Dirección *" value="" />
                         </div>
                         <div class="form-group">
                             <input type="text" name="txtName" class="form-control" placeholder="Ciudad *" value="" />
@@ -303,7 +233,7 @@
                             <input type="text" name="txtEmail" class="form-control" placeholder="Email *" value="" />
                         </div>
                         <div class="form-group">
-                            <input type="text" name="txtPhone" class="form-control" placeholder="Telefono *" value="" />
+                            <input type="text" name="txtPhone" class="form-control" placeholder="Teléfono *" value="" />
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -313,20 +243,20 @@
                     </div>
                     <div class="col-md-6 btn_submit">
                     	<div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact btn-block" value="Enviar mensaje" />
+                            <input style="background: #272d6b" type="submit" name="btnSubmit" class="btnContact btn-block btn-primary" value="Enviar Mensaje" />
                         </div>
                     </div>
                 </div>
                 <div class="row pb-5">
                 	<div class="col-md-6 mt-5 pt-5" align="center">
-                    	<img class="ws_img" src="https://www.grupoinver.com.ar/media/base/wapp.png" alt=""><br><br>
-                    	<p style="font-size: 14px">Escríbanos por este medio por consultas, o asesoramiento.</p>
+                    	<img class="ws_img" src="<?= get_template_directory_uri() ?>/images/wapp.png" alt=""><br><br>
+                    	<p style="font-size: 14px">Escríbanos por este medio por consultas o asesoramiento.</p>
                     </div>
                     <div class="col-md-6 mt-md-5 pt-md-5" align="center">
-                    	<p class="m-0" style="color: "><i class="fa fa-whatsapp"></i> 351 2916132</p>
-					             <p class="m-0" style="color: "><i class="fa fa-phone"></i> 0351 453 4685</p>
-					             <p class="m-0" style="color: "><i class="fa fa-envelope"></i> info@grupoinver.com.ar</p>
-					             <p class="m-0" style="color: "><i class="fa fa-address-book"></i> Av. 24 de Setiembre 1616 - Córdoba</p>
+                    	<p class="m-0" style="color: "><i class="fa fa-mobile"></i> <?php echo $Contacto["n_whatsapp"] ?></p>
+					             <p class="m-0" style="color: "><i class="fa fa-phone"></i> <?php echo $Contacto["n_telefono"] ?></p>
+					             <p class="m-0" style="color: "><i class="fa fa-envelope"></i> <?php echo $Contacto["email"] ?></p>
+					             <p class="m-0" style="color: "><i class="fa fa-address-book"></i> <?php echo $Contacto["direccion"] ?></p>
                     </div>
                 </div>
             </form>
@@ -335,6 +265,8 @@
 
 <script>
   $(document).ready(function(){
+    $('html, body').animate({scrollTop:750}, 'slow');
+
     $('#desaix').modal('show');
     $("#TipoPropiedad").change(function(){
       if ($("#TipoPropiedad").val()==3 || $("#TipoPropiedad").val()==4) {

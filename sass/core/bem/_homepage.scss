@@ -123,32 +123,12 @@
 	color: #ccfff2;
 }
 
-.tit_prin:after {
-	position: absolute;
-	content: " ";
-	width: 72px;
-	height: 8px;
-	margin-left: -256px;
-	margin-top: 72px;
-	border-radius: 41px;
-	background-image: linear-gradient(140deg, #ff0000 0, #2a3afc 100%);
-}
+
 
 .tit_prin {
 	font-size: 63px;
 	font-weight: 600;
 	text-align: center;
-}
-
-.tit_prin_con:after {
-	position: absolute;
-	content: " ";
-	width: 72px;
-	height: 8px;
-	margin-left: -238px;
-	margin-top: 72px;
-	border-radius: 41px;
-	background-image: linear-gradient(140deg, #ff0000 0, #2a3afc 100%);
 }
 
 .tit_prin_con {
@@ -251,17 +231,10 @@
   transition: all .2s;
 }
 
-.grupo h1:after{
-  margin-left: -368px;
-}
 
 @media (max-width: 415px) { 
   .grupo h1{
     font-size: 2.9rem;
-  }
-  .grupo h1:after{
-    margin-left: -272px;
-    margin-top: 53px;
   }
 
 }

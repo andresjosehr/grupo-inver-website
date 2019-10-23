@@ -1,14 +1,9 @@
-*{
-  font-family: 'PT Sans', sans-serif;
-
-}
-
-body, .header{
-  font-family: 'PT Sans', sans-serif !important;
+body:not(.postfooter), .header, h4{
+  font-family: 'Helvetica Neue LT Pro', sans-serif !important;
 }
 
  .header__menu a{
-  font-family: 'PT Sans', sans-serif !important;
+  font-family: 'Helvetica Neue LT Pro' !important;
   font-weight: 600;
 
 }
@@ -19,6 +14,10 @@ body {
   background-color: $white;
   color: $first;
   transition: all 0.3s;
+}
+
+h1, h2, h3{
+      color: #272d6b !important;
 }
 
 
@@ -146,11 +145,10 @@ body{
 
 
   .banner_section{
-    background: url(https://www.grupoinver.com.ar/desarrollista/edificios/desaIX/img/amplia/desa-IX-8.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    height: 800px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: bottom !important;
+    height: 800px !important;
   }
   .search-box .card{
     -webkit-box-shadow: 3px 2px 36px -9px rgba(0,0,0,0.75);
@@ -184,7 +182,7 @@ body{
 
 @media (max-width: 768px) { 
   .search-box{
-        margin-top: 75px !important;
+        margin-top: 40px !important;
   }
   .box-descripcion-text h4{
     font-size: 1.3rem;

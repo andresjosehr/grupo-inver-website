@@ -7,7 +7,7 @@
 
   get_header();
 
-
+require_once("banner-search.php");
 
 ?>
 
@@ -26,79 +26,6 @@
       <a href="#">Contact</a>
    </div>
 </div>
-<!-- END The overlay -->
-<section class="banner_section">
-   <div class="container">
-      <div class="row">
-         <div class="col-12">
-            <div class="search-box" style="margin-top: 200px;">
-               <div class="box-descripcion">
-                  <div class="box-descripcion-text">
-                     <h4><i class="fa fa-search"></i> ¡Encuentra la propiedad que buscas!</h4>
-                  </div>
-               </div>
-               <div class="card" style="margin: 0 auto;">
-                  <div class="card-body">
-                     <form>
-                        <div class="row">
-                           <div class="col-md-3">
-                              <div class="form-group">
-                                 <label for="exampleInputEmail1">Tipo de operacion</label>
-                                 <select type="text" class="form-control" id="TipoOperacion" placeholder="Password">
-                                    <option value="1">Alquiler</option>
-                                    <option value="2">Venta</option>
-                                 </select>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group">
-                                 <label for="exampleInputPassword1">Tipo de proriedad</label>
-                                 <select type="text" class="form-control" id="TipoPropiedad" placeholder="Password">
-                                    <option value="1">Casa</option>
-                                    <option value="2">Departamento</option>
-                                    <option value="3">Terreno</option>
-                                    <option value="4">Local</option>
-                                    <option value="5">Galpón</option>
-                                    <option value="6">Oficina</option>
-                                    <option value="7">Cochera</option>
-                                 </select>
-                              </div>
-                           </div>
-                           <div class="col-md-2">
-                              <div class="form-group">
-                                 <label for="exampleInputPassword1">Dormitorios</label>
-                                 <select type="text" class="form-control" id="Dormitorios" placeholder="Password">
-                                    <option value="1">Uno</option>
-                                    <option value="2">Dos</option>
-                                    <option value="3">Mas de Dos</option>
-                                 </select>
-                              </div>
-                           </div>
-                           <div class="col-md-2">
-                              <div class="form-group">
-                                 <label for="exampleInputPassword1">Cochera</label>
-                                 <select type="text" class="form-control" id="Cochera" placeholder="Password">
-                                    <option value="1">Si</option>
-                                    <option value="2">No</option>
-                                    <option value="3">Indistinto</option>
-                                 </select>
-                              </div>
-                           </div>
-                           <div class="col-md-2">
-                              <div class="form-group">
-                                 <label for="exampleInputPassword1" style="color: white">_</label><br>
-                                 <button type="submit" class="btn btn-primary btn-block">Buscar <i style="margin-left: 20px;" class="fa fa-search"></i></button>
-                              </div>
-                           </div>
-                        </div>
-                     </form>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
 
 
 <style>
@@ -125,6 +52,9 @@
    }
 </style>
 
+
+
+
 <section class="inmobiliaria_section mt-5 pb-5">
    <div class="container">
       <div class="row">
@@ -132,147 +62,110 @@
             <h1 class="tit_prin">Inmobiliaria</h1>
             <p class="mb-5" style="text-align: center;">Ultimas propiedades agregadas</p>
          </div>
-         <div class="col-lg-4 col-md-6 mt-5">
-            <div class="card">
-              <div class="card-header" style="background: url(https://www.grupoinver.com.ar/profit/SII/images/1755.JPG);min-height: 260px;background-size: cover;background-repeat: no-repeat;background-position: unset;">
-               <button class="btn btn-success" style="font-size: 12px">ALQUILER Y VENTA</button>    
+
+
+
+
+
+<?php 
+
+
+$the_query = new WP_Query( array('posts_per_page'=>9,
+                                 'post_type'=>'inmuebles',
+                                 'paged' => get_query_var('paged') ? get_query_var('paged') : 1) 
+                            ); 
+                            ?>
+<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+
+  <?php if (get_field("en_venta", get_the_ID())=="SI" && get_field("en_alquiler", get_the_ID())=="SI"): ?>
+    <?php   $btn["class"]="btn-success"; ?>
+    <?php   $btn["text"]="ALQUILER Y VENTA"; ?>
+  <?php endif ?>
+
+  <?php if (get_field("en_venta", get_the_ID())=="SI" && get_field("en_alquiler", get_the_ID())=="NO"): ?>
+    <?php   $btn["class"]="btn-warning"; ?>
+    <?php   $btn["text"]="VENTA"; ?>
+  <?php endif ?>
+
+  <?php if (get_field("en_venta", get_the_ID())=="NO" && get_field("en_alquiler", get_the_ID())=="SI"): ?>
+    <?php   $btn["class"]="btn-danger"; ?>
+    <?php   $btn["text"]="ALQUILER"; ?>
+  <?php endif ?>
+
+
+<div class="col-lg-4 col-md-6 mt-5">
+  <a href="<?php echo the_guid(get_the_ID()) ?>" style='color: #272d6b;'>
+            <div class="card" style="min-height: 630px;">
+              <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
+              <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $val->ID ), 'single-post-thumbnail' ); ?>
+                <div class="card-header" align="left" id="custom-bg" style="background-image: url('<?php echo $image[0]; ?>');min-height: 260px;background-size: cover;background-repeat: no-repeat;background-position: unset;">
+              <?php else: ?>
+              <div class="card-header" align="left" id="custom-bg" style="background-image: url('http://www.losprincipios.org/images/default.jpg');min-height: 260px;background-size: cover;background-repeat: no-repeat;background-position: unset;">
+              <?php endif; ?>
+
+              
+               <button class="btn <?php echo $btn["class"]; ?>" style="font-size: 12px"><?php echo $btn["text"]; ?></button>    
               </div>
               <div class="card-body">
                <div align="center">
-                  <h4 style="font-weight: 600">General Paz</h4>
-                  <p style="font-size: 80%;margin-top: -5px;"><i class="fa fa-map-marker-alt"></i> Córdoba - Argentina</p>
+                  <h4 style="font-weight: 600"><?php the_field("calle", get_the_ID()) ?></h4>
+                  <p style="font-size: 80%;margin-top: -5px;"><i class="fa fa-map-marker-alt"></i> <?php  the_field("nombre_zona", get_the_ID()) ?> - <?php  the_field("nombre_pais", get_the_ID()) ?></p>
                </div>
                <hr>  
                <div class="row description_card_in mx-md-1">
-                  <div class="col-6 py-1 icons_left">
-                     <i class="fa fa-th-large"></i> 100 m2
+                <div class="col-6 py-1 icons_left">
+                     <i class="fa fa-th-large"></i> <?php the_field("nombre_tipo_propiedad", get_the_ID()) ?>
+                </div>
+                <div class="col-6 py-1 icons_left">
+                     <i class="fa fa-arrows-alt-h"></i> Superficie <?php if (get_field("superficie_total_propiedad", get_the_ID())!=""): ?> <?php the_field("superficie_total_propiedad", get_the_ID()); ?> m2 <?php else: ?> sin informar <?php endif ?>
                   </div>
-                  <div class="col-6 py-1 pl-md-5">
-                     <i class="fa fa-car"></i> 1 cochera
+                  <div class="col-6 py-1">
+                     <i class="fa fa-car"></i> Cochera <?php if (get_field("descripcion_cochera_propiedad", get_the_ID())!=""): ?> <?php the_field("descripcion_cochera_propiedad", get_the_ID()); ?> <?php else: ?> NO <?php endif ?>
                   </div>
-                  <div class="col-6 py-1 icons_left">
-                     <i class="fa fa-bed"></i> 0 dormitorios
-                  </div>
-                  <div class="col-6 py-1 pl-md-5">
-                     <i class="fa fa-bath"></i> 0 baños
+                  <div class="col-6 py-1">
+                    <?php if (get_field("nombre_tipo_propiedad", get_the_ID())!="Galpon"): ?>
+                     <i class="fa fa-bath"></i> Baños <?php if (get_field("cantidad_banos_propiedad", get_the_ID())!=""): ?> <?php the_field("cantidad_banos_propiedad", get_the_ID()); ?> <?php else: ?> sin informar <?php endif ?>
+                     <?php endif ?>
                   </div>
                </div>
                <hr>  
                <div class="row description_card_in mx-md-1" style="margin-bottom: 30px;">
-                  <div class="col-6 py-1 icons_left"><i class="fa fa-user"></i> Pedro Perez</div>
-                  <div class="col-6 py-1 pl-md-5"><i class="fa fa-clock"></i> 1 dia</div>
+                  <div class="col-6 py-1 icons_left"><i class="fa fa-user"></i> <?php the_field("nombre_propietario", get_the_ID()) ?> <?php the_field("apellido_propietario", get_the_ID()) ?></div>
+                  <div class="col-6 py-1 pl-md-5"><i class="fa fa-clock"></i> <?php echo get_the_date() ?></div>
                </div>
-                  <button class="btn btn-block" style="position: absolute;left: 0px;bottom: -1px;background: #272d6b;color: white;">Ver detalles</button>
+                  <a href="<?php echo the_guid(get_the_ID()) ?>"><button class="btn btn-block" style="position: absolute;left: 0px;bottom: -1px;background: #272d6b;color: white;">Ver detalles</button></a>
               </div>
             </div>
          </div>
-         <div class="col-lg-4 col-md-6 mt-5">
-            <div class="card">
-              <div class="card-header" style="background: url(https://www.grupoinver.com.ar/profit/SII/images/5021.JPG);min-height: 260px;background-size: cover;background-repeat: no-repeat;background-position: unset;">
-               <button class="btn btn-warning" style="font-size: 12px; color: white">VENTA</button>    
-              </div>
-              <div class="card-body">
-               <div align="center">
-                  <h4 style="font-weight: 600">General Paz</h4>
-                  <p style="font-size: 80%;margin-top: -5px;"><i class="fa fa-map-marker-alt"></i> Córdoba - Argentina</p>
-               </div>
-               <hr>  
-               <div class="row description_card_in mx-md-1">
-                  <div class="col-6 py-1 icons_left">
-                     <i class="fa fa-th-large"></i> 100 m2
-                  </div>
-                  <div class="col-6 py-1 pl-md-5">
-                     <i class="fa fa-car"></i> 1 cochera
-                  </div>
-                  <div class="col-6 py-1 icons_left">
-                     <i class="fa fa-bed"></i> 0 dormitorios
-                  </div>
-                  <div class="col-6 py-1 pl-md-5">
-                     <i class="fa fa-bath"></i> 0 baños
-                  </div>
-               </div>
-               <hr>  
-               <div class="row description_card_in mx-md-1" style="margin-bottom: 30px;">
-                  <div class="col-6 py-1 icons_left"><i class="fa fa-user"></i> Pedro Perez</div>
-                  <div class="col-6 py-1 pl-md-5"><i class="fa fa-clock"></i> 1 dia</div>
-               </div>
-                  <button class="btn btn-block" style="position: absolute;left: 0px;bottom: -1px;background: #272d6b;color: white;">Ver detalles</button>
-              </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 mt-5">
-            <div class="card">
-              <div class="card-header" style="background: url(https://www.grupoinver.com.ar/profit/SII/images/5077.JPG);min-height: 260px;background-size: cover;background-repeat: no-repeat;background-position: unset;">
-               <button class="btn btn-warning" style="font-size: 12px; color: white">VENTA</button>    
-              </div>
-              <div class="card-body">
-               <div align="center">
-                  <h4 style="font-weight: 600">General Paz</h4>
-                  <p style="font-size: 80%;margin-top: -5px;"><i class="fa fa-map-marker-alt"></i> Córdoba - Argentina</p>
-               </div>
-               <hr>  
-               <div class="row description_card_in mx-md-1">
-                  <div class="col-6 py-1 icons_left">
-                     <i class="fa fa-th-large"></i> 100 m2
-                  </div>
-                  <div class="col-6 py-1 pl-md-5">
-                     <i class="fa fa-car"></i> 1 cochera
-                  </div>
-                  <div class="col-6 py-1 icons_left">
-                     <i class="fa fa-bed"></i> 0 dormitorios
-                  </div>
-                  <div class="col-6 py-1 pl-md-5">
-                     <i class="fa fa-bath"></i> 0 baños
-                  </div>
-               </div>
-               <hr>  
-               <div class="row description_card_in mx-md-1" style="margin-bottom: 30px;">
-                  <div class="col-6 py-1 icons_left"><i class="fa fa-user"></i> Pedro Perez</div>
-                  <div class="col-6 py-1 pl-md-5"><i class="fa fa-clock"></i> 1 dia</div>
-               </div>
-                  <button class="btn btn-block" style="position: absolute;left: 0px;bottom: -1px;background: #272d6b;color: white;">Ver detalles</button>
-              </div>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6 mt-5">
-            <div class="card">
-              <div class="card-header" style="background: url(https://www.grupoinver.com.ar/profit/SII/images/3052.JPG);min-height: 260px;background-size: cover;background-repeat: no-repeat;background-position: unset;">
-               <button class="btn btn-danger" style="font-size: 12px">ALQUILER</button>    
-              </div>
-              <div class="card-body">
-               <div align="center">
-                  <h4 style="font-weight: 600">General Paz</h4>
-                  <p style="font-size: 80%;margin-top: -5px;"><i class="fa fa-map-marker-alt"></i> Córdoba - Argentina</p>
-               </div>
-               <hr>  
-               <div class="row description_card_in mx-md-1">
-                  <div class="col-6 py-1 icons_left">
-                     <i class="fa fa-th-large"></i> 100 m2
-                  </div>
-                  <div class="col-6 py-1 pl-md-5">
-                     <i class="fa fa-car"></i> 1 cochera
-                  </div>
-                  <div class="col-6 py-1 icons_left">
-                     <i class="fa fa-bed"></i> 0 dormitorios
-                  </div>
-                  <div class="col-6 py-1 pl-md-5">
-                     <i class="fa fa-bath"></i> 0 baños
-                  </div>
-               </div>
-               <hr>  
-               <div class="row description_card_in mx-md-1" style="margin-bottom: 30px;">
-                  <div class="col-6 py-1 icons_left"><i class="fa fa-user"></i> Pedro Perez</div>
-                  <div class="col-6 py-1 pl-md-5"><i class="fa fa-clock"></i> 1 dia</div>
-               </div>
-                  <button class="btn btn-block" style="position: absolute;left: 0px;bottom: -1px;background: #272d6b;color: white;">Ver detalles</button>
-              </div>
-            </div>
-         </div>
+       </a>
+<?php endwhile; ?>
+
+<div class="pagination_inmo mt-5 pt-3">
+  <?php $big = 999999999; // need an unlikely integer
+   echo paginate_links( array(
+      'base' => str_replace( $big, '%#%', get_pagenum_link( $big ) ),
+      'format' => '?paged=%#%',
+      'current' => max( 1, get_query_var('paged') ),
+      'total' => $the_query->max_num_pages
+  )); ?>
+</div>
+
+<?php wp_reset_postdata(); ?>
+
+         
+
+
+
+
+
+
+
+
       </div>
    </div>
 </section>
 
-
+<!-- 
 <section class="more_section mb-5 mt-4">
    <div class="container">
       <div class="row">
@@ -281,7 +174,39 @@
          </div>
       </div>
    </div>
-</section>
+</section> -->
+
+
+<style>
+  .pagination_inmo{
+    width: 100%;
+    text-align: center;
+  }
+  .pagination_inmo .page-numbers{
+      display: inline-block;
+      padding: 0px 9px;
+      margin-right: 4px;
+      border-radius: 3px;
+      border: solid 1px #c0c0c0;
+      background: #e9e9e9;
+      box-shadow: inset 0px 1px 0px rgba(255,255,255, .8), 0px 1px 3px rgba(0,0,0, .1);
+      font-size: .875em;
+      font-weight: bold;
+      text-decoration: none;
+      color: #717171;
+      text-shadow: 0px 1px 0px rgba(255,255,255, 1);
+    }
+    .pagination_inmo .current{
+          border: none;
+    background: #616161;
+    box-shadow: inset 0px 0px 8px rgba(0,0,0, .5), 0px 1px 0px rgba(255,255,255, .8);
+    color: #f0f0f0;
+    text-shadow: 0px 0px 3px rgba(0,0,0, .5);
+    }
+</style>
+
+
+
 
 
 

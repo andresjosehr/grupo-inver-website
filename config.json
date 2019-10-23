@@ -7,7 +7,6 @@
     "sass/style.scss"
   ],
   "js": [
-  	"node_modules/jquery/dist/jquery.min.js",
   	"node_modules/slick-carousel/slick/slick.js",
   	"node_modules/bootstrap/dist/js/bootstrap.min.js",
     "js/main/functions.js",
