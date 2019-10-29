@@ -94,7 +94,7 @@ $the_query = new WP_Query( array('posts_per_page'=>9,
 
 
 <div class="col-lg-4 col-md-6 mt-5">
-  <a href="<?php echo the_guid(get_the_ID()) ?>" style='color: #272d6b;'>
+  <a href="<?php echo the_permalink(get_the_ID()) ?>" style='color: #272d6b;'>
             <div class="card" style="min-height: 630px;">
               <?php if (has_post_thumbnail( get_the_ID() ) ): ?>
               <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $val->ID ), 'single-post-thumbnail' ); ?>
@@ -133,7 +133,7 @@ $the_query = new WP_Query( array('posts_per_page'=>9,
                   <div class="col-6 py-1 icons_left"><i class="fa fa-user"></i> <?php the_field("nombre_propietario", get_the_ID()) ?> <?php the_field("apellido_propietario", get_the_ID()) ?></div>
                   <div class="col-6 py-1 pl-md-5"><i class="fa fa-clock"></i> <?php echo get_the_date() ?></div>
                </div>
-                  <a href="<?php echo the_guid(get_the_ID()) ?>"><button class="btn btn-block" style="position: absolute;left: 0px;bottom: -1px;background: #272d6b;color: white;">Ver detalles</button></a>
+                  <a href="<?php echo the_permalink(get_the_ID()) ?>"><button class="btn btn-block" style="position: absolute;left: 0px;bottom: -1px;background: #272d6b;color: white;">Ver detalles</button></a>
               </div>
             </div>
          </div>
