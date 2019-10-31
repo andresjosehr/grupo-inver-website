@@ -232,6 +232,15 @@ $the_query = new WP_Query( array('posts_per_page'=> 100,
 <?php endif; ?>
 
 
+
+<script>
+   $(document).ready(function(){
+    $('html, body').animate({scrollTop:750}, 'slow');
+  });
+</script>
+
+
+
          
 
 
