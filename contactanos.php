@@ -249,10 +249,10 @@
                 </div>
                 <div class="row pb-5">
                 	<div class="col-md-6 mt-5 pt-5" align="center">
-                    	<img class="ws_img" src="<?= get_template_directory_uri() ?>/images/wapp.png" alt=""><br><br>
+                    	<a href="https://api.whatsapp.com/send?phone=5493512916132" target="_blank"><img class="ws_img" src="<?= get_template_directory_uri() ?>/images/wapp.png" alt=""></a><br><br>
                     	<p style="font-size: 14px">Escríbanos por este medio por consultas o asesoramiento.</p>
                     </div>
-                    <div class="col-md-6 mt-md-5 pt-md-5" align="center">
+                    <div class="col-md-6 mt-md-5 pt-md-5" align="left" style="left: 20px">
                     	<p class="m-0" style="color: "><i class="fa fa-mobile"></i> <?php echo $Contacto["n_whatsapp"] ?></p>
 					             <p class="m-0" style="color: "><i class="fa fa-phone"></i> <?php echo $Contacto["n_telefono"] ?></p>
 					             <p class="m-0" style="color: "><i class="fa fa-envelope"></i> <?php echo $Contacto["email"] ?></p>

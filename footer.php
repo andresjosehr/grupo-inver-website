@@ -26,15 +26,24 @@
 				<div class="div_social_footer" style="margin-top: 25px">
 					<a href="https://www.instagram.com/inverinmobiliaria/" target="_blank">
 						<i style="font-size: 40px" class="fab fa-instagram social_footer"></i>
-					</a>
+					</a> <p style="font-size: 20px">@inver</p>
+				</div>
+				<div class="div_social_footer" style="margin-top: 5px">
 					<a href="https://www.facebook.com/grupoinverconsultorainmobiliaria/" target="_blank">
 						<i style="font-size: 40px" class="fab fa-facebook social_footer"></i>
-					</a>
+					</a> <p style="font-size: 20px">@inver</p>
+				</div>
+				<div class="div_social_footer" style="margin-top: 5px">
 					<a href="https://api.whatsapp.com/send?phone=5493512916132" target="_blank">
 						<i style="font-size: 40px" class="fab fa-whatsapp social_footer"></i>
 					</a>
 					<a class="ws_num" style="color: #272d6b!important;cursor: pointer;" href="https://api.whatsapp.com/send?phone=5493512916132" target="_blank"><p class="p_number">+54 9 351 291-6132</p></a>
 				</div>
+
+				<div class="div_social_footer" style="margin-top: 5px">
+					<i style="font-size: 30px;margin-left: 13px;margin-right: 17px;" class="fa fa-phone"></i> 0351 453-4685 / 0351 451-7335 <br>	
+				</div>
+
 			</div>
 		</div>
 	</div>
@@ -77,6 +86,17 @@
 	    margin: 0; 
 	}
 </style>
+
+
+<script>
+	var parts = window.location.href.split('/');
+	var lastSegment = parts.pop() || parts.pop();  // handle potential trailing slash
+	if (lastSegment=="desarrollista") $("#menu-item-38").addClass("active");
+	if (lastSegment=="inmobiliaria") $("#menu-item-43").addClass("active");
+	if (lastSegment=="consultora") $("#menu-item-423").addClass("active");
+	if (lastSegment=="arquitectura-y-diseno") $("#menu-item-812").addClass("active");
+	if (lastSegment=="contacto") $("#menu-item-422").addClass("active");
+</script>
 
 <?php // wp_footer(); ?>
 <script src='<?php echo get_site_url(); ?>/wp-includes/js/wp-embed.min.js?ver=4.9.8'></script>

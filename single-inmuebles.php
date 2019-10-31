@@ -174,7 +174,7 @@ require_once("banner-search.php");
                      <h5><i class="fa fa-map-marker-alt"></i> <?php  the_field("nombre_zona") ?> - <?php  the_field("nombre_localidad") ?></h5>
                   </div>
                   <div class="col-12 col-sm-6 pb-5 est_alig" align="right">
-                     <button class="btn px-5 py-2 val_pro"><?php the_field("importe_".$condi) ?> <?php the_field("signo_moneda_".$condi) ?></button>
+                     <button class="btn px-5 py-2 val_pro"><?php the_field("signo_moneda_".$condi) ?> <?php the_field("importe_".$condi) ?></button>
                   </div>
                </div>
                <h2>Detalles de la propiedad</h2>
