@@ -54,7 +54,7 @@
          <div class="col-md-6 col-sm-6 mt-4">
             <div class="card" style="  min-height: 300px">
               <div class="card-body">
-                <div style="width: 100%" align="center"><i class="fas fa-search grupo_icon"></i></div>
+                <div style="width: 100%" align="center"><i class="fas fa-home grupo_icon"></i></div>
                 <h5 class="card-title" align="center" style="font-weight: 600"><?php echo $Seccion1["cuadros"]["cuadro_2"]["titulo"]; ?></h5>
                 <p class="card-text"><?php echo $Seccion1["cuadros"]["cuadro_2"]["texto"]; ?></p>
               </div>
@@ -63,7 +63,7 @@
          <div class="col-md-6 col-sm-6 mt-4">
             <div class="card" style="min-height: 300px">
               <div class="card-body">
-                <div style="width: 100%" align="center"><i class="fas fa-home grupo_icon"></i></div>
+                <div style="width: 100%" align="center"><i class="fas fa-search grupo_icon"></i></div>
                 <h5 class="card-title" align="center" style="font-weight: 600"><?php echo $Seccion1["cuadros"]["cuadro_3"]["titulo"]; ?></h5>
                 <p class="card-text"><?php echo $Seccion1["cuadros"]["cuadro_3"]["texto"]; ?></p>
               </div>
@@ -73,8 +73,8 @@
             <div class="card" style="min-height: 300px">
               <div class="card-body">
                 <div style="width: 100%" align="center"><i class="fas fa-pencil-ruler grupo_icon"></i></div>
-                <h5 class="card-title" align="center" style="font-weight: 600"><?php echo $Seccion1["cuadros"]["cuadro_3"]["titulo"]; ?></h5>
-                <p class="card-text"><?php echo $Seccion1["cuadros"]["cuadro_3"]["texto"]; ?></p>
+                <h5 class="card-title" align="center" style="font-weight: 600">Arquitectura y Diseño</h5>
+                <p class="card-text">Brindamos asesoramiento a nuestros clientes para un óptimo aprovechamiento de sus inmuebles.</p>
               </div>
             </div>
          </div>
