@@ -89,7 +89,7 @@
               <div class="col-12" align="center">
                 <a href="vender-o-alquilar/" class="btn btn-primary ven_btn_des">Quiero Alquilar</a>
                 <a href="vender-o-alquilar/" class="btn btn-primary ven_btn_des">Quiero Vender</a>
-                <a href="vender-o-alquilar/" class="btn btn-primary ven_btn_des">Quiero Administrar mi propiedad</a>
+                <a href="vender-o-alquilar/" class="btn btn-primary ven_btn_des">Quiero que administren mi propiedad</a>
               </div>
             </div>
         </div>

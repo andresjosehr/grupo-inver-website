@@ -204,10 +204,6 @@ require_once("banner-search.php");
                       <i class="fa fa-bed"></i> Dormitorios <?php the_field("numero_ambientes_propiedad"); ?> 
                     </div>
                   <?php endif ?>
-
-                  <div class="col-4 my-3">
-                     <i class="fa fa-user"></i> <?php the_field("nombre_propietario") ?> <?php the_field("apellido_propietario") ?>
-                  </div>
                   <div class="col-4 my-3">
                      <i class="fa fa-clock"></i> <?php print_r(get_the_date()); ?>
                   </div>
