@@ -66,6 +66,11 @@ require_once("banner-search.php");
 
 </style>
 
+<script>
+   $(document).ready(function(){
+    $('html, body').animate({scrollTop:750}, 'slow');
+  });
+</script>
 
 
 

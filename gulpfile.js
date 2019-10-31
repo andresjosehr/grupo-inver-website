@@ -35,10 +35,10 @@ gulp.task('js', function() {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('sass/**/*.scss', ['css']);
-  gulp.watch('js/main/main.js', ['js']);
-  gulp.watch('js/main/functions.js', ['js']);
-  gulp.watch('./config.json', [ 'css', 'js' ]);
+  gulp.watch('sass/**/*.scss', gulp.series('css'));
+  gulp.watch('js/main/main.js', gulp.series('js'));
+  gulp.watch('js/main/functions.js', gulp.series('js'));
+  gulp.watch('./config.json', gulp.series('css', 'js'));
 });
 
-gulp.task('default', ['css', 'js']);
+gulp.task('default', gulp.series('css', 'js'));
