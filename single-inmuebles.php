@@ -212,7 +212,7 @@ require_once("banner-search.php");
                      <i class="fa fa-clock"></i> <?php print_r(get_the_date()); ?>
                   </div>
                </div>
-               <h2>Descripcion</h2>
+               <h2>Descripción</h2>
                <hr>
                <div class="col-12 px-0">
                   <?php the_field("aviso_propiedad"); ?>
@@ -403,6 +403,11 @@ require_once("banner-search.php");
       });
    })
 </script>
+<script>
+   $(document).ready(function(){
+    $('html, body').animate({scrollTop:750}, 'slow');
+  });
+</script
 
 
 
