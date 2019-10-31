@@ -169,7 +169,7 @@ require_once("banner-search.php");
          <div class="modal-header">
             <div class="row" style="width: 100%">
                <div class="col-6">
-                  <h1 class="modal-title"><?php echo $TreTit; ?></h1>
+                  <h1 class="modal-title"><?php echo $Proyecto["informacion_breve"]["titulo"]; ?> </h1>
                </div>
                <div class="col-6" align="right">
                   <a style="cursor: pointer;" onclick="$('#proyecto<?php echo $i; ?>').modal('toggle');">X</a>
@@ -449,7 +449,7 @@ require_once("banner-search.php");
                                         <div class="col-md-6">
                                            <div class="form-group">
                                               <label for="form_email">Dirección *</label>
-                                              <input id="form_email" type="text" name="Direccion" class="form-control" placeholder="Indica tu dirección *" required="required" data-error="Valid email is required.">
+                                              <input id="form_email" type="text" name="Direccion" class="form-control" placeholder="Indique tu dirección *" required="required" data-error="Valid email is required.">
                                               <div class="help-block with-errors"></div>
                                            </div>
                                         </div>

@@ -243,7 +243,7 @@ require_once("banner-search.php");
                            <div class="col-md-6">
                               <div class="form-group">
                                  <label for="form_email">Direccion *</label>
-                                 <input id="form_email" type="email" name="email" class="form-control" placeholder="Indica tu direccion *" required="required" data-error="Valid email is required.">
+                                 <input id="form_email" type="email" name="email" class="form-control" placeholder="Indique tu direccion *" required="required" data-error="Valid email is required.">
                                  <div class="help-block with-errors"></div>
                               </div>
                            </div>
