@@ -10,7 +10,7 @@
 					<a href="desarrollista"><li>DESARROLLISTA</li></a>
 					<a href="inmobiliaria"><li>INMOBILIARIA</li></a>
 					<a href="consultora"><li>CONSULTORA</li></a>
-					<a href="#"><li>ARQUITECTURA Y DISEÑO</li></a>
+					<a href="arquitectura-y-diseno"><li>ARQUITECTURA Y DISEÑO</li></a>
 					<a href="contacto"><li>CONTACTO</li></a>
 				</ul>
 			</div>
