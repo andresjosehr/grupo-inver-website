@@ -207,7 +207,11 @@ $the_query = new WP_Query( array('posts_per_page'=>9,
 
 
 
-
+<script>
+   $(document).ready(function(){
+    $('html, body').animate({scrollTop:750}, 'slow');
+  });
+</script>
 
 <?php get_footer(); ?>
 
