@@ -264,3 +264,6 @@ $the_query = new WP_Query( array('posts_per_page'=> 100,
 
 <?php // get_sidebar(); ?>
 <?php get_footer(); ?>
+
+
+
