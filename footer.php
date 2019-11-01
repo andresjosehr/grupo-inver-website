@@ -26,12 +26,12 @@
 				<div class="div_social_footer" style="margin-top: 25px">
 					<a href="https://www.instagram.com/inverinmobiliaria/" target="_blank">
 						<i style="font-size: 40px" class="fab fa-instagram social_footer"></i>
-					</a> <p style="font-size: 20px">@inver</p>
+					</a> <p style="font-size: 20px">@inverinmobiliaria</p>
 				</div>
 				<div class="div_social_footer" style="margin-top: 5px">
 					<a href="https://www.facebook.com/grupoinverconsultorainmobiliaria/" target="_blank">
 						<i style="font-size: 40px" class="fab fa-facebook social_footer"></i>
-					</a> <p style="font-size: 20px">@inver</p>
+					</a> <p style="font-size: 20px">grupoinverconsultorainmobiliaria</p>
 				</div>
 				<div class="div_social_footer" style="margin-top: 5px">
 					<a href="https://api.whatsapp.com/send?phone=5493512916132" target="_blank">

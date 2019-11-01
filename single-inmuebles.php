@@ -293,15 +293,7 @@ require_once("banner-search.php");
          </div>
 
          <div class="col-lg-4 col-md-12 side-bar-pro" align="center">
-            <div class="info_usr_propie">
-               <h4 class="nom_pro" align="center"><?php the_field("nombre_propietario") ?> <?php the_field("apellido_propietario") ?></h4>
-               <h5 align="center"><?php the_field("domicilio_propietario") ?></h5>
-               <hr>
-               <p><i class="fa fa-phone"></i> <?php the_field("telefono_propietario") ?></p>
-               <?php if (get_field("mail_propietario")!=""): ?>
-                <p><i class="fa fa-envelope"></i> <?php the_field("mail_propietario") ?></p>+
-              <?php endif ?>
-            </div>
+        
 
 
 
@@ -317,7 +309,9 @@ require_once("banner-search.php");
                 'orderby' => 'rand',
               ]);
 
-              foreach ($posts as $key => $val) { ?>
+              $i=0;
+
+              foreach ($posts as $key => $val) { $i++; ?>
 
                 <?php if (get_field("en_venta", $val->ID)=="SI" && get_field("en_alquiler", $val->ID)=="SI"): ?>
                   <?php   $btn["class"]="btn-success"; ?>
@@ -333,7 +327,7 @@ require_once("banner-search.php");
                   <?php   $btn["class"]="btn-danger"; ?>
                   <?php   $btn["text"]="ALQUILER"; ?>
                 <?php endif ?>
-                <div class="col-12 mt-5">
+                <div class="col-12 <?php if ($i!=1): ?> mt-5 <?php endif ?>">
                    <div class="card">
 
                 

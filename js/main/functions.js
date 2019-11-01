@@ -17,13 +17,13 @@ window.onload=function(){
           $("#menu-main-menu-1 li:nth-child(1)").addClass("active")
         }
 
-        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-        if (!isChrome) {
-          $("a[href='https://api.whatsapp.com/send?phone=5493512916132']").map(function(){
-            $(this).replaceWith('<span>' + $(this).html() +'</span>')
-          })
+        // var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        // if (!isChrome) {
+        //   $("a[href='https://api.whatsapp.com/send?phone=5493512916132']").map(function(){
+        //     $(this).replaceWith('<span>' + $(this).html() +'</span>')
+        //   })
 
-        }
+        // }
 
 
         $("#TipoPropiedad").change(function(){
