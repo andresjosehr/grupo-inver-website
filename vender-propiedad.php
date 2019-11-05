@@ -14,7 +14,7 @@ if ($_POST["VenderAlquilarPropiedad"]) {
          $Datos= $Datos.$key.": ".$value.", ";
       }
 
-      mail("fernandofilas@btob.com.ar", "Nuevo contacto | Consulta de Proyecto Desarrollista", "Nuevo contacto | Alquilar o vender Propiedad", "Has recibido un contacto de parte de un usuario que quiere alquilar o vender su propiedad. Sus datos son -->: ". $Datos);
+      mail("joseandreshernandezross@gmail.com", "Nuevo contacto | Consulta de Proyecto Desarrollista", "Nuevo contacto | Alquilar o vender Propiedad", "Has recibido un contacto de parte de un usuario que quiere alquilar o vender su propiedad. Sus datos son -->: ". $Datos);
 
     // $blogusers = get_users('role=Administrator');
     // foreach ($blogusers as $user) {
@@ -84,8 +84,8 @@ require_once("banner-search.php");
                   <div class="row">
                      <div class="col-md-6">
                         <div class="form-group">
-                           <label for="form_email">Direccion *</label>
-                           <input id="form_email" type="text" name="direccion" class="form-control" placeholder="Indica tu direccion *" required="required" data-error="Valid email is required.">
+                           <label for="form_email">Dirección *</label>
+                           <input id="form_email" type="text" name="direccion" class="form-control" placeholder="Indica tu dirección *" required="required" data-error="Valid email is required.">
                            <div class="help-block with-errors"></div>
                         </div>
                      </div>
@@ -108,7 +108,7 @@ require_once("banner-search.php");
                      <div class="col-md-6">
                         <div class="form-group">
                            <label for="form_email">Teléfono *</label>
-                           <input id="form_email" type="text" name="telefono" class="form-control" placeholder="Escribe tu telefono *" required="required" data-error="Valid email is required.">
+                           <input id="form_email" type="text" name="telefono" class="form-control" placeholder="Escribe tu teléfono *" required="required" data-error="Valid email is required.">
                            <div class="help-block with-errors"></div>
                         </div>
                      </div>
@@ -170,7 +170,7 @@ require_once("banner-search.php");
                      <div class="col-md-6">
                         <div class="form-group">
                            <label for="form_email">Dirección *</label>
-                           <input id="form_email" type="text" name="direccion" class="form-control" placeholder="Indica la direccion de la propiedad *" required="required" data-error="Valid email is required.">
+                           <input id="form_email" type="text" name="direccion" class="form-control" placeholder="Indica la dirección de la propiedad *" required="required" data-error="Valid email is required.">
                            <div class="help-block with-errors"></div>
                         </div>
                      </div>

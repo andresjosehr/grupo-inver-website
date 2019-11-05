@@ -305,7 +305,7 @@ require_once("banner-search.php");
               $posts = get_posts([
                 'post_type' => 'inmuebles',
                 'post_status' => 'publish',
-                'numberposts' => 3,
+                'numberposts' => 4,
                 'orderby' => 'rand',
               ]);
 
@@ -345,12 +345,7 @@ require_once("banner-search.php");
                             <p><i class="fa fa-map-marker-alt"></i> <?php  the_field("nombre_zona", $val->ID) ?> - <?php  the_field("nombre_pais", $val->ID) ?></p>
                          </div>
                          <hr>
-                         <div class="row description_card_in mx-md-1 row_info_usr">
-                            <div class="col-6 py-1 icons_left"><i class="fa fa-user"></i> <?php the_field("nombre_propietario", $val->ID) ?> <?php the_field("apellido_propietario", $val->ID) ?></div>
-                            <div class="col-6 py-1 pl-md-5"><i class="fa fa-clock"></i> <?php echo get_post_time( get_option( 'date_format' ), false, $val->ID, true ); ?></div>
-                            <div class="col-12 py-1"><i class="fa fa-th-large"></i> <?php the_field("nombre_tipo_propiedad", $val->ID) ?></div>
-                         </div>
-                        <a href="<?php echo the_guid($val->ID) ?>"> <button class="btn btn-block ver-datelles-btn">Ver detalles</button></a>
+                        <a href="<?php echo the_permalink($val->ID) ?>"> <button class="btn btn-block ver-datelles-btn">Ver detalles</button></a>
                       </div>
                    </div>
                 </div>
