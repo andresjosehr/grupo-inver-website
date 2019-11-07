@@ -9,10 +9,19 @@
 
 if ($_POST["VenderAlquilarPropiedad"]) {
 
-      $Datos="";
-      foreach ($_POST as $key => $value) {
-         $Datos= $Datos.$key.": ".$value.", ";
-      }
+
+
+   echo $template = file_get_contents(get_template_directory_uri()."/email-contact.html");
+   die();
+
+   foreach($_POST as $key => $value)
+   {
+       $template = str_replace('{{ '.$key.' }}', $value, $template);
+   }
+
+   echo $template;
+   die();
+
 
       mail("joseandreshernandezross@gmail.com", "Nuevo contacto | Consulta de Proyecto Desarrollista", "Nuevo contacto | Alquilar o vender Propiedad", "Has recibido un contacto de parte de un usuario que quiere alquilar o vender su propiedad. Sus datos son -->: ". $Datos);
 
